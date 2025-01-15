@@ -1,0 +1,48 @@
+/* Define Style Options for Printing */
+@media print {
+
+    #MainForm *:not(#content):not(#content *) {
+        display: none!important;
+    }
+
+    .gold-button {
+        display: none!important;
+    }
+    
+    #pageContent_titleNavDiv {
+        display: none!important;
+    }
+
+    #userLabel {
+        display: none!important;
+    }
+    
+    #content {
+        padding:0!important;
+    }
+    
+    #content > table:nth-of-type(1) td:has(> #pageContent_currentDateLabel ) {
+        width: 50%!important;
+    }
+
+    #pageContent_currentDateLabel {
+        float: right!important;
+    }
+
+    .page-title {
+        padding-left: 0!important;
+    }
+
+    tr:has(> .label) {
+        display: none!important;
+    }
+}
+
+/* Always Applied */
+#pageContent_MajorList {
+    margin-top: 20px;
+}
+
+#print-button {
+    padding: 10px 20px;
+}

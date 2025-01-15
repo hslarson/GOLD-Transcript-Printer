@@ -1,6 +1,6 @@
 {
 	"manifest_version": 3,
-	"version": "1.0.0",
+	"version": "0.1.0",
 	"name": "GOLD Transcript Printer",
 	"description": "Produces a better-looking output when printing unofficial transcripts from GOLD",
 	"icons": {

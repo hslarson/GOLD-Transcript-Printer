@@ -1,50 +1,58 @@
-const PRINT_URL = "my.sa.ucsb.edu/gold/UnofficialTranscript.aspx"
+const PRINT_HOSTNAME = "my.sa.ucsb.edu"
+const PRINT_PATH = "/gold/UnofficialTranscript.aspx"
 
 
 // Called on tab updates
-async function tab_update_callback(tabId, changeInfo, tab) {
-	
-	// A tab finished loading
-	if (changeInfo.status == "complete") {
-		
-		// The tab is a transcript print window
-		if (String(tab.url).slice( String(tab.url).indexOf("://")+3 ).startsWith(PRINT_URL)) {
-			console.log("Transcript Window Detected. Injecting Scripts..")
+function tab_update_callback(tabId, changeInfo, tab) {
+    try {
+        // Check if the tab finished loading
+        if (changeInfo.status === "complete" && tab.url) {
+            // Check if URL matches GOLD's unofficial transcript page
+            const url = new URL(tab.url);
+            if (url.hostname === PRINT_HOSTNAME && url.pathname === PRINT_PATH) {
+                // Insert custom script & stylesheet
+                console.info("Transcript Window Detected. Injecting Scripts...");
+                inject_script(tabId)
+            }
+        }
+    } catch (error) {
+        console.error("Error in tab_update_callback:", error);
+    }
+}
+ 
 
-			inject_script(tabId)
-		}
-	}
+// Inject JavaScript into the transcript webpage
+function inject_script(tabId) {
+    chrome.scripting.executeScript({
+        files: ["inject.js"],
+        target: {tabId: tabId}
+    }, 
+    (result) => {
+        if (chrome.runtime.lastError) {
+            console.error("JS Injection Failed (Runtime Error):", chrome.runtime.lastError);
+        } else if (!result || result.length === 0 || result[0].result !== "ok") {
+            console.error("JS Injection Failed (Bad Result):", result);
+        } else {
+            console.info("JS Injection Succeeded. Applying CSS...");
+            insert_css(tabId);
+        }
+    });
 }
 
 
-// Inject a script into some html file
-async function inject_script(tabId) {
-	chrome.scripting.executeScript(
-		{
-			files: ["inject.js"],
-			target: {tabId: tabId}
-		}, 
-		insert_css.bind(null, tabId) // Pass tabId as additional argument
-	)
-}
-
-
-// Apply stylesheet if JS injection was successful
-async function insert_css(tabId, result) {
-	
-	// Check injection result
-	if ((typeof result) == "object" && result.length && result[0].result == 'ok') {
-		console.log("JS Injection Succeeded. Applying CSS..")
-
-		// Apply CSS
-		chrome.scripting.insertCSS({
-			files: ["styles.css"],
-			target:  {tabId: tabId}
-		})
-	}
-	else {
-		console.log("JS Injection Failed. Aborting..")
-	}
+// Load custom CSS stylesheet
+function insert_css(tabId) {
+    chrome.scripting.insertCSS({
+        files: ["styles.css"],
+        target: { tabId: tabId }
+    }, 
+    () => {
+        if (chrome.runtime.lastError) {
+            console.error("CSS Injection Failed ():", chrome.runtime.lastError);
+        } else {
+            console.info("CSS Injection Completed. Ready to Print!");
+        }
+    });
 }
 
 

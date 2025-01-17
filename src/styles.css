@@ -1,48 +1,45 @@
-/* Define Style Options for Printing */
+/* Style options specifically for printing */
 @media print {
 
-    #MainForm *:not(#content):not(#content *) {
+    /* Hide everything that isn't inside the content div */
+    #MainForm > :not(#content) {
         display: none!important;
     }
 
-    .gold-button {
+    /* Remove title and welcome message */ 
+    #MainForm > #content > :not(.row) {
         display: none!important;
     }
-    
+
+    /* Hide the nav bar */
     #pageContent_titleNavDiv {
         display: none!important;
     }
 
-    #userLabel {
-        display: none!important;
-    }
-    
+    /* Remove extra whitespace */
     #content {
+        margin:0!important;
         padding:0!important;
-    }
-    
-    #content > table:nth-of-type(1) td:has(> #pageContent_currentDateLabel ) {
-        width: 50%!important;
-    }
-
-    #pageContent_currentDateLabel {
-        float: right!important;
-    }
-
-    .page-title {
-        padding-left: 0!important;
-    }
-
-    tr:has(> .label) {
-        display: none!important;
     }
 }
 
-/* Always Applied */
+/* Always applied */
+/* Prevent "University of California, Santa Barbara" text from wrapping*/
+#timestampCell {
+    width: 50%;
+}
+
+/* Right-justify timestamp */ 
+#pageContent_currentDateLabel {
+    float: right;
+}
+
+/* Add some space before degree information */
 #pageContent_MajorList {
     margin-top: 20px;
 }
 
+/* Make print button look pretty */
 #print-button {
     padding: 10px 20px;
 }

@@ -1,11 +1,10 @@
 ## __GOLD Transcript Printer Extension for Chrome__
 ### _Makes UCSB GOLD Unofficial Transcripts Look Pretty!_
 
-<a href="https://chromewebstore.google.com/?hl=en-US&utm_source=ext_sidebar" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Chrome_Web_Store-Dowload-blue?logo=chromewebstore&logoColor=white" alt="download link" /></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://chromewebstore.google.com/?hl=en-US&utm_source=ext_sidebar"><img src="https://img.shields.io/badge/Chrome_Web_Store-Dowload-blue?logo=chromewebstore&logoColor=white" alt="download link" /></a>&nbsp;&nbsp;&nbsp;&nbsp;
 <img alt="Chrome Web Store Users" src="https://img.shields.io/chrome-web-store/users/ogffaloegjglncjfehdfplabnoondfjo" />
 <img alt="Chrome Web Store Rating" src="https://img.shields.io/chrome-web-store/rating/ogffaloegjglncjfehdfplabnoondfjo" />
 <img alt="Chrome Web Store Last Updated" src="https://img.shields.io/chrome-web-store/last-updated/nccfelhkfpbnefflolffkclhenplhiab" />
-<hr>
 
 <img src="https://i.ibb.co/dgd5wxq/screenshot1-clipped.jpg"  alt="before and after image" />
 
@@ -27,7 +26,7 @@ If you encounter issues or see anything that could be improved, feel free to ope
 
 For development reasons, you may choose to load the extension into Chrome directly rather than downloading it from the Chrome web store.
 
-1. Open the Chrome extension manager in your browser: <a href="chrome://extensions/" target="_blank" rel="noopener noreferrer">chrome://extensions/</a>
+1. Open the Chrome extension manager in your browser: chrome://extensions/
 2. Turn on "Developer Mode"
 3. Select "Load unpacked" and choose the local directory containing the source files
 

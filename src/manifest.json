@@ -1,6 +1,6 @@
 {
 	"manifest_version": 3,
-	"version": "0.2.0",
+	"version": "1.0.0",
 	"name": "GOLD Transcript Printer",
 	"description": "Produces a better-looking output when printing unofficial transcripts from GOLD",
 	"icons": {
@@ -8,7 +8,7 @@
 	  "48":  "assets/printer-48.png",
 	  "128": "assets/printer-128.png"
   	},
-	"permissions": ["scripting","tabs"],
+	"permissions": ["scripting"],
 	"host_permissions": ["*://my.sa.ucsb.edu/gold/*"],
 	"background": {
 		"service_worker": "background.js",

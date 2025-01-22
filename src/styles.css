@@ -21,6 +21,16 @@
         margin:0!important;
         padding:0!important;
     }
+
+    /* Prevent page breaks inside the table for a given quarter */
+    #content > div.overflow {
+        break-inside: avoid!important;
+    }
+
+    /* Make sure title remains with table if table moves to a new page */
+    #content > table {
+        break-after: avoid!important;
+    }
 }
 
 /* Always applied */

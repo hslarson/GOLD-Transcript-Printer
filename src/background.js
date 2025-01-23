@@ -19,14 +19,14 @@ function tab_update_callback(tabId, changeInfo, tab) {
         console.error("Error in tab_update_callback:", error);
     }
 }
- 
+
 
 // Inject JavaScript into the transcript webpage
 function inject_script(tabId) {
     chrome.scripting.executeScript({
         files: ["inject.js"],
         target: {tabId: tabId}
-    }, 
+    },
     (result) => {
         if (chrome.runtime.lastError) {
             console.error("JS Injection Failed (Runtime Error):", chrome.runtime.lastError);
@@ -45,7 +45,7 @@ function insert_css(tabId) {
     chrome.scripting.insertCSS({
         files: ["styles.css"],
         target: { tabId: tabId }
-    }, 
+    },
     () => {
         if (chrome.runtime.lastError) {
             console.error("CSS Injection Failed ():", chrome.runtime.lastError);

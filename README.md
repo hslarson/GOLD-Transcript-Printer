@@ -10,7 +10,7 @@
 
 ## __Description__
 
-I created this extension to improve the way unofficial transcripts are printed in GOLD. 
+I created this extension to improve the way unofficial transcripts are printed in GOLD.
 
 Functionally, the extension runs a script to modify certain HTML elements, then applies a stylesheet that dictates how the page should look when printed. Due to the relative simplicity of the extension, it should be easy to port to other browsers. I don't plan to do this, but others are welcome to do so. I only licensed under GPL-3 to prevent people from charging money for it.
 

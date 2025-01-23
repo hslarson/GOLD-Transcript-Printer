@@ -6,7 +6,7 @@
         display: none!important;
     }
 
-    /* Remove title and welcome message */ 
+    /* Remove title and welcome message */
     #MainForm > #content > :not(.row) {
         display: none!important;
     }
@@ -18,8 +18,8 @@
 
     /* Remove extra whitespace */
     #content {
-        margin:0!important;
-        padding:0!important;
+        margin: 0!important;
+        padding: 0!important;
     }
 
     /* Prevent page breaks inside the table for a given quarter */
@@ -39,7 +39,7 @@
     width: 50%;
 }
 
-/* Right-justify timestamp */ 
+/* Right-justify timestamp */
 #pageContent_currentDateLabel {
     float: right;
 }

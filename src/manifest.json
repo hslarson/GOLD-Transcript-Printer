@@ -1,8 +1,8 @@
 {
 	"manifest_version": 3,
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"name": "GOLD Transcript Printer",
-	"description": "Produces a better-looking output when printing unofficial transcripts from GOLD",
+	"description": "Improves the appearance of unofficial transcripts printed from UCSB GOLD",
 	"icons": {
 	  "16":  "assets/printer-16.png",
 	  "48":  "assets/printer-48.png",

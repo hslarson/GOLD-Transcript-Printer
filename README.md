@@ -6,7 +6,7 @@
 <img alt="Chrome Web Store Rating" src="https://img.shields.io/chrome-web-store/rating/jlkffenkhidahbeblokodpokpgmnglbb" />
 <img alt="Chrome Web Store Last Updated" src="https://img.shields.io/chrome-web-store/last-updated/jlkffenkhidahbeblokodpokpgmnglbb" />
 
-<img src="https://i.ibb.co/dgd5wxq/screenshot1-clipped.jpg"  alt="before-and-after image" />
+<img src="https://i.ibb.co/5BhVMWp/screenshot1-clipped.jpg"  alt="before-and-after image" />
 
 ## __Description__
 
